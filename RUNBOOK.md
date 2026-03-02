@@ -204,33 +204,48 @@ Routage :
 
 ## Configuration feedback (email)
 
-La configuration versionnée utilise des placeholders (pas de données personnelles):
-- `Feedback:RecipientEmail = contact@example.com`
-- `Feedback:SenderEmail = ""`
+### Configurer Brevo SMTP
 
-Surcharge via variables d'environnement:
-- `Feedback__RecipientEmail`
-- `Feedback__SenderEmail`
-- `Feedback__SenderName`
-- `Feedback__Smtp__Host`
-- `Feedback__Smtp__Port`
-- `Feedback__Smtp__UseSsl`
-- `Feedback__Smtp__Username`
-- `Feedback__Smtp__Password`
+En environnement `home`, la configuration SMTP est lue depuis
+`deploy/home.env` sur la machine cible (`/home/arnaud/apps/bikevoyager/deploy/home.env`).
 
-Exemple PowerShell:
+- Le fichier `deploy/home.env` n'est pas versionné.
+- Le script `scripts/deploy-home.sh` le crée automatiquement à partir de
+  `deploy/home.env.example` s'il est absent.
+- Les permissions sont forcées en `600`.
+- Ne jamais stocker les identifiants SMTP Brevo dans le repo ou dans les logs.
 
-```powershell
-$env:Feedback__RecipientEmail = "contact@example.com"
-$env:Feedback__SenderEmail = "noreply@example.com"
+Variables attendues dans `deploy/home.env` :
+
+- `FEEDBACK__ENABLED`
+- `FEEDBACK__SENDEREMAIL` (adresse expéditeur validée dans Brevo)
+- `FEEDBACK__SENDERNAME`
+- `FEEDBACK__RECIPIENTEMAIL`
+- `FEEDBACK__SUBJECTPREFIX`
+- `FEEDBACK__SMTP__HOST` (`smtp-relay.brevo.com`)
+- `FEEDBACK__SMTP__PORT` (`587`)
+- `FEEDBACK__SMTP__USESSL` (`true`)
+- `FEEDBACK__SMTP__USERNAME` (login SMTP Brevo)
+- `FEEDBACK__SMTP__PASSWORD` (clé SMTP Brevo)
+
+Si la configuration est absente ou incomplète, l'endpoint
+`POST /api/v1/feedback` reste en `503` avec statut `disabled` (comportement
+normal).
+
+### Test rapide feedback (local docker)
+
+```bash
+curl -X POST http://127.0.0.1:5080/api/v1/feedback \
+  -H "Content-Type: application/json" \
+  -d '{"subject":"Retour UX mobile","message":"Le formulaire feedback fonctionne correctement depuis la page map.","contactEmail":"contact@EXAMPLE.TLD","page":"/map"}'
 ```
 
-Exemple user-secrets (dev local):
+Vérification :
 
-```powershell
-dotnet user-secrets set "Feedback:RecipientEmail" "contact@example.com" --project backend/src/BikeVoyager.Api/BikeVoyager.Api.csproj
-dotnet user-secrets set "Feedback:SenderEmail" "noreply@example.com" --project backend/src/BikeVoyager.Api/BikeVoyager.Api.csproj
-```
+- Réponse HTTP `202` si l'envoi SMTP est opérationnel.
+- Réponse HTTP `503` avec `status: "disabled"` si SMTP n'est pas configuré.
+- Contrôler `docker logs --tail 120 bikevoyager-api` pour les erreurs SMTP.
+- Vérifier la réception du mail sur `FEEDBACK__RECIPIENTEMAIL`.
 
 ## Protection API
 

@@ -178,6 +178,10 @@ CONTAINER_NAMES=("bikevoyager-front" "bikevoyager-api" "bikevoyager-valhalla" "b
 APP_PARENT_DIR="$(dirname "$APP_DIR")"
 COMPOSE_FILE_PATH="${APP_DIR}/${COMPOSE_FILE}"
 COMPOSE_PROJECT="bikevoyager-home"
+HOME_ENV_RELATIVE_PATH="deploy/home.env"
+HOME_ENV_EXAMPLE_RELATIVE_PATH="deploy/home.env.example"
+HOME_ENV_PATH="${APP_DIR}/${HOME_ENV_RELATIVE_PATH}"
+HOME_ENV_EXAMPLE_PATH="${APP_DIR}/${HOME_ENV_EXAMPLE_RELATIVE_PATH}"
 
 git_with_auth() {
   if [ -n "$REPO_TOKEN" ]; then
@@ -246,6 +250,18 @@ if [ ! -f "$COMPOSE_FILE_PATH" ]; then
   log "Fichier compose introuvable: ${COMPOSE_FILE_PATH}"
   exit 1
 fi
+
+if [ ! -f "$HOME_ENV_EXAMPLE_PATH" ]; then
+  log "Fichier exemple introuvable: ${HOME_ENV_EXAMPLE_PATH}"
+  exit 1
+fi
+
+if [ ! -f "$HOME_ENV_PATH" ]; then
+  cp "$HOME_ENV_EXAMPLE_PATH" "$HOME_ENV_PATH"
+  log "Fichier deploy/home.env créé (à personnaliser avec les identifiants Brevo)"
+fi
+
+chmod 600 "$HOME_ENV_PATH"
 
 log "Build et démarrage de la stack home via docker compose"
 "${compose_cmd[@]}" -p "$COMPOSE_PROJECT" -f "$COMPOSE_FILE_PATH" up -d --build --remove-orphans

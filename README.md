@@ -97,6 +97,26 @@ Vérification :
 curl http://127.0.0.1:5080/api/v1/valhalla/status
 ```
 
+### Emails (Brevo)
+
+En environnement `home`, la configuration SMTP du module feedback se fait
+sur la machine de déploiement dans `deploy/home.env` (non versionné), à
+partir de `deploy/home.env.example`.
+
+Variables requises :
+
+- `FEEDBACK__ENABLED`
+- `FEEDBACK__SENDEREMAIL` (adresse validée dans Brevo)
+- `FEEDBACK__RECIPIENTEMAIL`
+- `FEEDBACK__SMTP__HOST`
+- `FEEDBACK__SMTP__PORT`
+- `FEEDBACK__SMTP__USESSL`
+- `FEEDBACK__SMTP__USERNAME`
+- `FEEDBACK__SMTP__PASSWORD`
+
+Si la configuration SMTP est incomplète (ex: host vide, sender/recipient
+absents), `POST /api/v1/feedback` reste en `503` avec statut `disabled`.
+
 ------------------------------------------------------------------------
 
 ## 🔐 Protection API
