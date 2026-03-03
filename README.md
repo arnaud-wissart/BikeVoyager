@@ -19,10 +19,16 @@ Application full-stack de planification d'itinéraires vélo (API ASP.NET Core +
 - Déploiement manuel reproductible via GitHub Actions (`workflow_dispatch`) sur runner `self-hosted` Linux avec Docker Compose.
 
 ## Captures
-<center><img src="docs/screenshots/BikeVoyager1.png" alt="Capture 1 - Planification" height="420" /></center>
-<center><img src="docs/screenshots/BikeVoyager2.png" alt="Capture 2 - Carte" height="420" /></center>
-<center><img src="docs/screenshots/BikeVoyager3.png" alt="Capture 3 - Données" width="220" /></center>
-<center><img src="docs/screenshots/BikeVoyager4.png" alt="Capture 4 - Aide" width="220" /></center>
+<p align="center">
+  <img src="docs/screenshots/BikeVoyager1.png" alt="Capture 1 - Planification" height="420" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/BikeVoyager2.png" alt="Capture 2 - Carte" height="420" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/BikeVoyager3.png" alt="Capture 3 - Données" width="250" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/BikeVoyager4.png" alt="Capture 4 - Aide" width="250" />
+</p>
 
 ## Architecture
 ```mermaid
