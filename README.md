@@ -1,9 +1,9 @@
 # BikeVoyager
 Application full-stack de planification d'itineraires velo (API ASP.NET Core + frontend React) avec routage, POI, export GPX et synchronisation cloud.
 
-[![CI](https://github.com/arnaud-wissart/BikeVoyager/actions/workflows/ci.yml/badge.svg)](https://github.com/arnaud-wissart/BikeVoyager/actions/workflows/ci.yml)
-[![Deploiement manuel](https://github.com/arnaud-wissart/BikeVoyager/actions/workflows/deploy-manual.yml/badge.svg)](https://github.com/arnaud-wissart/BikeVoyager/actions/workflows/deploy-manual.yml)
-[![Licence MIT](https://img.shields.io/github/license/arnaud-wissart/BikeVoyager)](LICENSE)
+[![CI](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/ci.yml/badge.svg)](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/ci.yml)
+[![Deploiement manuel](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/deploy-manual.yml/badge.svg)](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/deploy-manual.yml)
+[![Licence MIT](https://img.shields.io/github/license/arnaud-wissart-lab/BikeVoyager)](LICENSE)
 
 ## Demo live
 - Application: <https://bike.arnaudwissart.fr>
@@ -54,7 +54,7 @@ Prerequis:
 
 Installation:
 ```bash
-git clone https://github.com/arnaud-wissart/BikeVoyager.git
+git clone https://github.com/arnaud-wissart-lab/BikeVoyager.git
 cd BikeVoyager
 dotnet restore BikeVoyager.sln
 npm --prefix frontend ci
