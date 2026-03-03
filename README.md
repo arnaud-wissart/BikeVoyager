@@ -6,7 +6,7 @@ Application full-stack de planification d'itinéraires vélo (API ASP.NET Core +
 [![Licence MIT](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
 
 ## Démo live
-- Démo live: [https://tetris.arnaudwissart.fr](https://tetris.arnaudwissart.fr)
+- Démo live: [https://bike.arnaudwissart.fr](https://bike.arnaudwissart.fr)
 - Historique des changements: [CHANGELOG.md](CHANGELOG.md)
 
 ## Ce que ça démontre
