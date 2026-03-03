@@ -3,7 +3,7 @@ Application full-stack de planification d'itineraires velo (API ASP.NET Core + f
 
 [![CI](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/ci.yml/badge.svg)](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/ci.yml)
 [![Deploiement manuel](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/deploy-manual.yml/badge.svg)](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/deploy-manual.yml)
-[![Licence MIT](https://img.shields.io/github/license/arnaud-wissart-lab/BikeVoyager)](LICENSE)
+[![Licence MIT](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
 
 ## Demo live
 - Application: <https://bike.arnaudwissart.fr>
@@ -19,10 +19,10 @@ Application full-stack de planification d'itineraires velo (API ASP.NET Core + f
 - Deploiement manuel reproductible via GitHub Actions (`workflow_dispatch`) sur runner `self-hosted` Linux avec Docker Compose.
 
 ## Captures
-![Capture 1 - Planification](docs/screenshots/BikeVoyager1.png)
-![Capture 2 - Carte](docs/screenshots/BikeVoyager2.png)
-![Capture 3 - Donnees](docs/screenshots/BikeVoyager3.png)
-![Capture 4 - Aide](docs/screenshots/BikeVoyager4.png)
+<img src="docs/screenshots/BikeVoyager1.png" alt="Capture 1 - Planification" height="420" />
+<img src="docs/screenshots/BikeVoyager2.png" alt="Capture 2 - Carte" height="420" />
+<img src="docs/screenshots/BikeVoyager3.png" alt="Capture 3 - Donnees" height="420" />
+<img src="docs/screenshots/BikeVoyager4.png" alt="Capture 4 - Aide" height="420" />
 
 ## Architecture
 ```mermaid
