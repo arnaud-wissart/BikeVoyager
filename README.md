@@ -5,8 +5,8 @@ Application full-stack de planification d'itinéraires vélo (API ASP.NET Core +
 [![Déploiement manuel](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/deploy-manual.yml/badge.svg)](https://github.com/arnaud-wissart-lab/BikeVoyager/actions/workflows/deploy-manual.yml)
 [![Licence MIT](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
 
-## Démo live - Application:
-<https://bike.arnaudwissart.fr>
+## Démo live
+- Démo live: [https://tetris.arnaudwissart.fr](https://tetris.arnaudwissart.fr)
 - Historique des changements: [CHANGELOG.md](CHANGELOG.md)
 
 ## Ce que ça démontre
