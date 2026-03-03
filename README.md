@@ -7,7 +7,6 @@ Application full-stack de planification d'itineraires velo (API ASP.NET Core + f
 
 ## Demo live
 - Application: <https://bike.arnaudwissart.fr>
-- Release: TODO (aucun tag/release Git detecte dans ce depot au 2026-03-03)
 - Historique des changements: [CHANGELOG.md](CHANGELOG.md)
 
 ## Ce que ca demontre
