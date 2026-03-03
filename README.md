@@ -70,12 +70,6 @@ Lancement local (backend + frontend, et Valhalla si données disponibles):
 ./scripts/dev-up
 ```
 
-URLs utiles:
-- Frontend: <http://localhost:5173>
-- API: <http://localhost:5024>
-- Health API: <http://localhost:5024/api/v1/health>
-- Statut Valhalla: <http://localhost:5024/api/v1/valhalla/status>
-
 Arrêt:
 ```powershell
 ./scripts/dev-down
