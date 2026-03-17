@@ -44,7 +44,7 @@ Schéma détaillé: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 ## Stack technique
 - Backend: ASP.NET Core `net10.0`, Minimal APIs, FluentValidation, Serilog, architecture `Domain / Application / Infrastructure`.
-- Frontend: React `19.2.4`, TypeScript `5.9.x`, Vite `7.3.1`, Mantine `8.3.15`, Cesium `1.138.0`, i18next.
+- Frontend: React `19.2.4`, TypeScript `5.9.x`, Vite `7.3.1`, Mantine `8.3.17`, Cesium `1.139.1`, i18next.
 - Tests: xUnit (`BikeVoyager.UnitTests`, `BikeVoyager.ApiTests`), Vitest (`frontend`), Playwright E2E.
 - AppHost local: .NET Aspire (`Aspire.AppHost.Sdk 13.1.1`, `Aspire.Hosting.Redis 13.1.1`).
 - Conteneurs: Dockerfiles backend/frontend + stack Compose `front/api/valhalla/valhalla-bootstrap`.
@@ -53,7 +53,7 @@ Schéma détaillé: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 ## Démarrage rapide (dev local)
 Prérequis:
 - .NET SDK `10.0.x` (CI: `actions/setup-dotnet@v5`)
-- Node.js `20` + npm (CI: `actions/setup-node@v6`)
+- Node.js `22` + npm (CI: `actions/setup-node@v6`, fichier `.nvmrc`)
 - Docker + Docker Compose (nécessaires pour Valhalla)
 - PowerShell (`pwsh`) pour les scripts `scripts/dev-*`
 
