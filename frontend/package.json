@@ -21,7 +21,7 @@
     "@fontsource/ibm-plex-sans": "^5.2.8",
     "@mantine/core": "^8.3.17",
     "@mantine/hooks": "^8.3.17",
-    "@mantine/notifications": "^8.3.17",
+    "@mantine/notifications": "^8.3.18",
     "@tabler/icons-react": "^3.40.0",
     "cesium": "^1.139.1",
     "i18next": "^25.8.18",
